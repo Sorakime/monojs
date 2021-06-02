@@ -44,7 +44,6 @@ window._attr=(el, arr)=>{
 }
 
 window._notNull=(tar)=>{
-  let n;
   if(tar){
     return true;
   } else {
