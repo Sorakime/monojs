@@ -1,2 +1,6 @@
-# monojs
-The JavaScript library by monochrome for everyone.
+# monoJS
+The JavaScript library by monochrome. for everyone.
+monochrome.によるみんなのためのJavaScriptのライブラリ。
+
+---
+
