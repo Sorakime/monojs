@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>monoJS</title>
+    <link rel="stylesheet" href="./main.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+  </head>
+  <body>
+    <h1>monoJS</h1>
+    <div>
+      <h2><code>_(<i>selector</i>)</code>/<code>__(<i>selector</i>)</code></h2>
+      <p>HTML文書の要素を選択するメソッド。</p>
+      <p>jQueryで言うところの<code>$()</code>に相当する。</p>
+      <p>また、内部的には<code>document.querySelector()</code>や<code>document.querySelectorAll()</code>を使用しているため、動作速度は比較的遅い。</p>
+      <pre><code><span class="func">alert(<span class="text">`以下、_()の結果。\n<span class="inline">${<span class="func">_('div').<var>innerText</var></span>}</span>\n以下、__()の結果。<span class="inline">${<span class="func">__('div')<var>[0].innerText</var></span>}`</span></span>);</code></code></pre>
+      <a href="javascript:test2();">動作させる</a>
+    </div>
+    <div>
+      <h2><code>_newEl(<i>object</i>)</code></h2>
+      <p>新しい要素を作成するメソッド。</p>
+      <p><code>document.createElement()</code>を使用するため、DOMには追加されない。</p>
+      <p>オブジェクト：</p>
+      <pre><code>{
+  <var>el:</var> <span class="text">'<<span>要素の名前</span>>'</span>,
+  <var>attribute:</var> [
+    [<span class="text">'<<span>属性の名前</span>>'</span>,<span class="text">'<<span>属性の値</span>>'</span>]
+  ],
+  <var>value:</var> <span class="text">'<<span>要素の値</span>>'</span>,
+  <var>inner:</var> <span class="text">'<<span>要素の内容(innerHTML)</span>>'</span>
+}</code></pre>
+      <p>以下、テスト用のコード。</p>
+      <pre><code><span class="var">var</span> <var>element</var><span class="operator">=</span><span class="func">_newEl(<span>{
+  <var>el:</var> <span class="text">'p'</span>,
+  <var>inner:</var> <span class="text">'new <<span class="text">span><</span>p<<span class="text">/span>> element.'</span></span>,
+  <var>attribute:</var> [
+    [<span class="text">'style'</span>,<span class="text">'font-size; 15px;'</span>],
+    [<span class="text">'onclick'</span>,<span class="text">'alert(\'This element is \"p\" element\')'</span>]
+  ]
+}</span>)</span>
+<span class="func">_(<span class="text">'div:nth-child(3)'</span>).appendChild(<var>element</var>);</span>
+</code></pre>
+      <a href="javascript:test3();">動作させる</a>
+    </div>
+    <div>
+      <h2 onclick="alert(_notNull(forNotNull))"><code>_notNull(<i>variable</i>)</code></h2>
+      <p>変数の内容があるかを確認するメソッド。</p>
+      <pre><code><span class="var">var</span> <var>forNotNull</var><span class="operator">=</span><span class="text">'notnull'</span>;
+<span class="func">alert(_notNull(<var>forNotNull</var>))</span>;</code></pre>
+      <a href="javascript:test1(0)">動作させる</a>
+    </div>
+    <div>
+      <h2><code>_attr(<i>element</i> <i>array</i>)</code></h2>
+      <p>HTML文書内の要素の属性を変更するメソッド。</p>
+      <p><del>初期状態では属性を追加するが、引数の配列内に<code>['overWrite',true]</code>を追加すると上書きできる。</del><ins>結局は実装できず諦めました。</ins></p>
+      <p>また、引数は要素および配列でなければいけません。テキストや、連想配列では正しく動作するわけがありません。</p>
+      <pre><code><span class="func">_attr(<span class="func">_(<span class="text">'div:nth-child(5)>span[style]'</span>)</span>,<span>[
+  [<span class="text">'style'</span>,<span class="text">'size: 15px;'</span>],
+  [<span class="text">'onclick'</span>,<span class="text">'alert(\'This element is \"p\" element\')'</span>]
+]</span>)</span></code></pre>
+      <a href="javascript:test4()">動作させる</a>
+      <span style="color: #1188dd">クリックしてください</span>
+    </div>
+    <script src="../script/mono.js"></script>
+    <script src="./test.js"></script>
+  </body>
+</html>
