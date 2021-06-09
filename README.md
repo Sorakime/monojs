@@ -42,4 +42,6 @@ monochrome.によるみんなのためのJavaScriptのフレームワーク。
 とする。
 
 
-#
+# 動作情報
+- Firefox 88.1 以降
+- Safari 13.1.2
