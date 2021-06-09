@@ -45,3 +45,8 @@ monochrome.によるみんなのためのJavaScriptのフレームワーク。
 # 動作情報
 - Firefox 88.1 以降
 - Safari 13.1.2
+- Chrome 91.0.4472.77
+
+# 名前について
+多分セーフ。[Mono](htps://mono.js.org/)っていうJavaScriptのフレームワークがありますが、まぁこれは[monoJS](/Sorakime/monojs)なので。JSは大文字ね。それとMonoはNode向けのものであること、monoJSはフロント向けっていうこと。
+https://sorakime.github.io/mncr/project/monojs っていう感じのURLで、ページ公開したいなー。
